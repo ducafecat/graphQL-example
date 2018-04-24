@@ -1,0 +1,26 @@
+{
+  "name": "graphql-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducafecat/graphQL-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ducafecat/graphQL-example/issues"
+  },
+  "homepage": "https://github.com/ducafecat/graphQL-example#readme",
+  "dependencies": {
+    "apollo-server-express": "^1.3.5",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^2.24.0"
+  }
+}
