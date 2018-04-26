@@ -44,14 +44,14 @@ const typeDefs = `
     content: String
     noticeTime: Date
   }
-  
+
   type Remind implements Message {
     content: String
     endTime: Date
   }
 
   """
-  联合类型 消息 & 提示
+  联合类型 通知 & 提醒
   """
   union MessageResult = Notice | Remind
 
@@ -88,7 +88,7 @@ const typeDefs = `
     posts: [Post]
     authors: [Author]
     author(id: Int!): Author
-    searchInterface (text: String!): Message
+    searchInterface (text: String!): Message!
     searchUnion (text: String!): MessageResult!
   }
 
@@ -113,11 +113,18 @@ const resolvers = {
     authors: () => authors,
     author: (_, {id}) => find(authors, {id}),
     searchInterface: (_, {text}) => {
-      // return notices[0]
-      return reminds[0]
+      if (text === 'notice') {
+        return notices[0]
+      } else {
+        return reminds[0]
+      }
     },
     searchUnion: (_, {text}) => {
-      return notices[0]
+      if (text === 'notice') {
+        return notices[0]
+      } else {
+        return reminds[0]
+      }
     }
   },
 
@@ -155,7 +162,7 @@ const resolvers = {
 
   Message: {
     __resolveType(obj, context, info){
-      // console.log(obj, context)
+      console.log(obj, context, info)
       if(obj.noticeTime){
         return 'Notice'
       }
@@ -168,7 +175,7 @@ const resolvers = {
 
   MessageResult: {
     __resolveType(obj, context, info){
-      console.log(obj, context)
+      console.log(obj, context, info)
       if(obj.noticeTime){
         return 'Notice'
       }
@@ -201,10 +208,10 @@ const resolvers = {
 // Put together a schema
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers,
-  resolverValidationOptions: {
-    requireResolversForResolveType: false
-  }
+  resolvers
+  // resolverValidationOptions: {
+  //   requireResolversForResolveType: false
+  // }
 })
 
 // Initialize the app
