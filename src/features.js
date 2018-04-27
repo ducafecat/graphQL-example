@@ -36,15 +36,30 @@ const typeDefs = `
     CA
   }
 
+  """
+  消息接口
+  """
   interface Message {
     content: String
   }
 
+  """
+  通知对象
+  """
   type Notice implements Message {
+    """
+    通知内容
+    """
     content: String
+    """
+    通知时间
+    """
     noticeTime: Date
   }
 
+  """
+  提醒对象
+  """
   type Remind implements Message {
     content: String
     endTime: Date
@@ -85,9 +100,20 @@ const typeDefs = `
 
   # the schema allows the following query:
   type Query {
+    """
+    所有文章
+    """
     posts: [Post]
+    """
+    所有作者
+    """
     authors: [Author]
-    author(id: Int!): Author
+    author(
+      """
+      作者ID
+      """
+      id: Int!
+    ): Author
     searchInterface (text: String!): Message!
     searchUnion (text: String!): MessageResult!
   }

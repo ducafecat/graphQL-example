@@ -6,7 +6,9 @@
   "scripts": {
     "quick-start": "nodemon ./src/quick-start.js --exec babel-node -e js",
     "features": "nodemon ./src/features.js --exec babel-node -e js",
-    "h" : "nodemon -h"
+    "mock": "nodemon ./src/mock.js --exec babel-node -e js",
+    "test": "babel-node ./src/mock.js",
+    "h": "nodemon -h"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tools": "^2.24.0",
+    "mockjs": "^1.0.1-beta3",
     "lodash": "^4.17.10"
   },
   "devDependencies": {
