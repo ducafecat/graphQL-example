@@ -44,6 +44,11 @@ const typeDefs = `
     topPosts(limit: Int): [Post]
     notices: [Notice]
   }
+
+  # this schema allows the following mutation:
+  type Mutation {
+    addUser: User
+  }
 `
 
 const typeResolvers = {
