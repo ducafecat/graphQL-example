@@ -1,0 +1,12 @@
+"""
+文章
+"""
+type Post {
+  id: Int!
+  title: String!
+  content: String
+  author: String
+  vis: Int!
+  addtime: Date!
+  comments: [Comment]
+}

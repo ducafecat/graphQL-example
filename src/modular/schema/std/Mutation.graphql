@@ -1,0 +1,6 @@
+"""
+更新
+"""
+type Mutation {
+  upVotePost(postId: Int!): Post
+}

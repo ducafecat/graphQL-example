@@ -1,0 +1,9 @@
+"""
+评论
+"""
+type Comment {
+  id: Int!
+  message: String
+  author: String
+  addtime: Date!
+}

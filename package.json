@@ -7,6 +7,7 @@
     "quick-start": "nodemon ./src/quick-start.js --exec babel-node -e js",
     "features": "nodemon ./src/features.js --exec babel-node -e js",
     "mock": "nodemon ./src/mock.js --exec babel-node -e js",
+    "modular": "nodemon ./src/modular/index.js --exec babel-node -e js",
     "test": "babel-node ./src/mock.js",
     "h": "nodemon -h"
   },
@@ -26,8 +27,9 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tools": "^2.24.0",
+    "lodash": "^4.17.10",
     "mockjs": "^1.0.1-beta3",
-    "lodash": "^4.17.10"
+    "require-graphql-file": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",

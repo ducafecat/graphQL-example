@@ -1,0 +1,10 @@
+"""
+枚举
+"""
+enum Country {
+  CN
+  ENG
+  JP
+  UK
+  CA
+}

@@ -1,0 +1,6 @@
+"""
+查询
+"""
+type Query {
+  posts: [Post]
+}
