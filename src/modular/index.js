@@ -21,8 +21,6 @@ const typeDefs = [
   requireGraphQLFile('./schema/std/Mutation')
 ]
 
-console.log(typeDefs)
-
 // 合并 schema
 const schema = makeExecutableSchema({
   typeDefs,
@@ -33,6 +31,7 @@ const schema = makeExecutableSchema({
   }
 })
 
+// 添加mock数据
 addMockFunctionsToSchema({schema, mocks, preserveResolvers: true})
 
 // Initialize the app
